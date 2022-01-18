@@ -1,0 +1,33 @@
+.heading {
+  margin: 10px 60px 10px 70px;
+  padding: 10px;
+  /* border: 2px solid black; */
+}
+
+.footer {
+  margin: 30px 60px 10px 60px;
+  padding: 10px;
+  text-align: center;
+}
+
+.card{
+    margin: 10px;
+}
+
+.container{
+    /* background-color: bisque; */
+    padding: 10px;
+}
+
+.bg-custom{
+    background-color: #D8E9F0;
+}
+
+.bg-custom-title{
+    background-color: #454553;
+    color: whitesmoke;
+}
+
+.spinner-color{
+    background-color: #EB586F;
+}
