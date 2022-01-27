@@ -2,7 +2,6 @@ const container = document.getElementById("container");
 const spinner = document.getElementById("spinner");
 
 let limit = 5;
-let pageCount = 1;
 let postCount = 1;
 const maxPost = 100; // Set number which is multiple of limit
 
@@ -11,7 +10,6 @@ const getPost = async () => {
   const response = await fetch(
     `https://jsonplaceholder.typicode.com/posts/${postCount++}`
   );
-  // console.log(response);
   const data = await response.json();
   // console.log(data);
   const htmlPost = `
@@ -26,28 +24,25 @@ const getPost = async () => {
         </div>
     `;
   container.insertAdjacentHTML("beforeend", htmlPost);
+  spinner.classList.add("invisible");
 };
-
-const htmlData = () => {};
 
 for (let i = 0; i < limit; i++) {
   getPost();
 }
 
 const showData = () => {
-  console.log("called showdatas :" + postCount);
+  console.log("called showdatas");
   for (let i = 0; i < limit; i++) {
     setTimeout(() => {
       getPost();
-      spinner.classList.add("invisible");
     }, 1000);
   }
 };
 
 window.addEventListener("scroll", () => {
-  const scrollHeight = document.documentElement.scrollHeight;
-  const scrollTop = window.pageYOffset;
-  const clientHeight = window.innerHeight;
+  const { scrollHeight, scrollTop, clientHeight } = document.documentElement;
+
   if (
     Math.ceil(scrollTop + clientHeight) == scrollHeight &&
     postCount <= maxPost
