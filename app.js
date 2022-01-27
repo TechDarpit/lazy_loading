@@ -9,7 +9,7 @@ const maxPost = 30; // Set number which is multiple of limit
 
 const getPost = async () => {
   const response = await fetch(
-    `https://jsonplaceholder.typicode.com/posts?_limit=${limit}$_page=${pageCount}`
+    `https://jsonplaceholder.typicode.com/posts?_limit=3$_page=1`
   );
   //   console.log(response);
   const data = await response.json();
